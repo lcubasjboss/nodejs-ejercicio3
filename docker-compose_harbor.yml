@@ -1,0 +1,35 @@
+version: "2.4"
+services:
+    nodejsApp:
+        image: harbor.tallerdevops.com/lcubas/nodeappcontainer_lc:latest
+        container_name: nodeappcontainer_lc
+        restart: always
+        ports:
+            - "8500:3000"
+        working_dir: /usr/app/web
+        volumes:
+          - ./nodejs-app:/usr/app
+        entrypoint: ["/usr/local/bin/npm", "run"]
+        command: start-app
+        environment:
+          - MONGO_HOST=mongodb_lc 
+          - MONGO_PORT=27017
+          - MONGO_DB=nodejsdb 
+        depends_on:
+           - mongodb
+        networks:
+            - nodejsNetwork
+    mongodb:
+        image: harbor.tallerdevops.com/lcubas/mongo:3.6
+        container_name: mongodb_lc
+        restart: always
+        volumes:
+          - ./database-data:/data/db
+        ports:
+            - "27017:27017"
+        command: mongod --noauth --smallfiles
+        networks:
+            - nodejsNetwork
+networks:
+    nodejsNetwork:
+        driver: bridge

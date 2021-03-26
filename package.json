@@ -1,0 +1,22 @@
+{
+  "name": "node-express-mongodb-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start-app": "node app.js",
+    "start-app-debug": "node --inspect app.js",
+    "check-node-version": "node -v"
+  },
+  "dependencies": {
+    "body-parser": "^1.5.2",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.1.1",
+    "express": "^4.8.0",
+    "express-session": "^1.7.2",
+    "jade": "^1.5.0",
+    "method-override": "^2.1.2",
+    "mongodb": "^2.0.9",
+    "morgan": "^1.2.2",
+    "multer": "^0.1.3"
+  }
+}
