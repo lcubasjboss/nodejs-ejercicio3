@@ -1,10 +1,9 @@
-version: "2.4"
+version: "3.6"
 services:
-    nodejsApp:
+    nodejsapp:
         build:
           context: .
           dockerfile: ./dockerfileFolder/Dockerfile
-        image: nodeappcontainer_lc:latest
         container_name: nodeappcontainer_lc
         restart: always
         ports:
