@@ -1,5 +1,5 @@
-node-express-mongodb-example: Ejercicio 3
-==========================================
+node-express-mongodb-example: Ejercicio 4 - Docker Compose
+=========================================================================
 
 An example Node.js application built using the Express framework connected to a MongoDB database.
 
@@ -7,12 +7,12 @@ An example Node.js application built using the Express framework connected to a 
 
 ##SETUP
 
-1) Execute ./build_tag_pushImages.sh -> To build, tag and push images
+1) Execute docker-compose up -> To start containers: NodeJS and MongoDB
 
-2) Execute: ./deploy.sh --> To create docker volume, docker network and start docker containers
+2) Put in browser: http://[servername]:8081 to check the image above
 
-3) Put in browser: http://[servername]:8081 to check the image above
+3) Cancell current execution CTRL + C
 
-4) Execute: ./clean.sh --> To delete all resources created previously
+4) Execute docker-compose down -> To delete containers: NodeJS and MongoDB
 
 5) Put in browser: http://[servername]:8081 to get an error page because all resources was deleted
